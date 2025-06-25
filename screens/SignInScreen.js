@@ -1,4 +1,4 @@
-// screens/SignInScreen.js
+
 import React, { useState } from 'react';
 import {
   View,
@@ -26,7 +26,7 @@ const SignInScreen = ({ navigation }) => {
 
   return (
     <ImageBackground
-      source={require('../assets/bg.jpg')} // 📸 Put your image in `assets/bg.jpg`
+      source={require('../assets/bg.jpg')} 
       style={styles.background}
       resizeMode="cover"
     >
@@ -34,26 +34,24 @@ const SignInScreen = ({ navigation }) => {
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         style={styles.overlay}
       >
-        <View style={styles.container}>
+        <View style={styles.formContainer}>
           <Text style={styles.title}>💰 Expense Tracker</Text>
 
-          <View style={styles.inputContainer}>
-            <TextInput
-              placeholder="Username"
-              placeholderTextColor="#ccc"
-              value={username}
-              onChangeText={setUsername}
-              style={styles.input}
-            />
-            <TextInput
-              placeholder="Password"
-              placeholderTextColor="#ccc"
-              value={password}
-              onChangeText={setPassword}
-              secureTextEntry
-              style={styles.input}
-            />
-          </View>
+          <TextInput
+            placeholder="Username"
+            placeholderTextColor="#aaa"
+            value={username}
+            onChangeText={setUsername}
+            style={styles.input}
+          />
+          <TextInput
+            placeholder="Password"
+            placeholderTextColor="#aaa"
+            value={password}
+            onChangeText={setPassword}
+            secureTextEntry
+            style={styles.input}
+          />
 
           <TouchableOpacity style={styles.button} onPress={handleLogin}>
             <Text style={styles.buttonText}>Sign In</Text>
@@ -67,50 +65,50 @@ const SignInScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    justifyContent: 'center',
   },
   overlay: {
     flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.5)', // Dark overlay
     justifyContent: 'center',
-  },
-  container: {
-    marginHorizontal: 30,
-    backgroundColor: 'rgba(255,255,255,0.1)',
     padding: 20,
-    borderRadius: 12,
-    backdropFilter: 'blur(5px)',
+    backgroundColor: 'rgba(0,0,0,0.3)', 
+  },
+  formContainer: {
+    backgroundColor: 'rgba(0,0,0,0.6)',
+    padding: 25,
+    borderRadius: 15,
+    shadowColor: '#000',
+    shadowOpacity: 0.3,
+    shadowOffset: { width: 0, height: 4 },
+    shadowRadius: 6,
+    elevation: 5,
   },
   title: {
-    fontSize: 32,
+    fontSize: 28,
     fontWeight: 'bold',
-    color: '#fff',
-    marginBottom: 30,
+    color: '#ffffff',
+    marginBottom: 20,
     textAlign: 'center',
   },
-  inputContainer: {
-    marginBottom: 20,
-  },
   input: {
-    backgroundColor: 'rgba(255,255,255,0.2)',
+    backgroundColor: 'rgba(255,255,255,0.1)',
+    borderColor: '#aaa',
+    borderWidth: 1,
     color: '#fff',
     padding: 12,
-    borderRadius: 10,
+    borderRadius: 8,
     marginBottom: 12,
-    borderColor: '#ccc',
-    borderWidth: 1,
   },
   button: {
     backgroundColor: '#00c897',
     padding: 14,
-    borderRadius: 10,
+    borderRadius: 8,
     alignItems: 'center',
     marginTop: 10,
   },
   buttonText: {
     color: '#fff',
-    fontSize: 16,
     fontWeight: 'bold',
+    fontSize: 16,
   },
 });
 
