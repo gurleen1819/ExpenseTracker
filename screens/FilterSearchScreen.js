@@ -124,8 +124,8 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     fontSize: 18,
     color: '#2d3436',
-    fontFamily: 'Arial',
-    fontWeight: '600',
+    // fontFamily: 'Arial',
+    fontWeight:  'normal',
   },
   label: {
     fontSize: 18,
