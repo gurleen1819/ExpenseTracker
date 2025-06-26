@@ -151,11 +151,12 @@ const AddTransactionScreen = ({ navigation }) => {
             onValueChange={setCategory}
             style={{ color: COLORS[category] || COLORS.Default }}
           >
-            {Object.entries(COLORS)
-              .filter(([key]) => key.includes('️'))
-              .map(([key, color]) => (
-                <Picker.Item key={key} label={key} value={key} color={color} />
-              ))}
+           {Object.entries(COLORS)
+  .filter(([key]) => !['Credit', 'Debit', 'Refund', 'Default'].includes(key))
+  .map(([key, color]) => (
+    <Picker.Item key={key} label={key} value={key} color={color} />
+))}
+
           </Picker>
         </View>
       </ScrollView>
